@@ -882,7 +882,7 @@ def linkage(y, method='single', metric='euclidean', optimal_ordering=False):
       * method='average' assigns
 
         .. math::
-           d(u,v) = \\sum_{ij} \\frac{d(u[i], v[j])}
+           d(u,v) = \\sum_{ij} \\frac{dist(u[i], v[j])}
                                    {(|u|*|v|)}
 
         for all points :math:`i` and :math:`j` where :math:`|u|`
@@ -925,11 +925,11 @@ def linkage(y, method='single', metric='euclidean', optimal_ordering=False):
         .. math::
 
            d(u,v) = \\sqrt{\\frac{|v|+|s|}
-                               {T}d(v,s)^2
+                               {T}dist(v,s)^2
                         + \\frac{|v|+|t|}
-                               {T}d(v,t)^2
+                               {T}dist(v,t)^2
                         - \\frac{|v|}
-                               {T}d(s,t)^2}
+                               {T}dist(s,t)^2}
 
         where :math:`u` is the newly joined cluster consisting of
         clusters :math:`s` and :math:`t`, :math:`v` is an unused
